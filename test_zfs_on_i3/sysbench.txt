@@ -1,0 +1,25 @@
+
+# fill files, 100G total, random read-write, 8K blocks, 16MB each file, fsync after each write
+# 50 files (~ 2GiB)
+
+# just prepare dataset:
+cd /mnt/postgresql/
+sysbench --test=fileio \
+         --file-test-mode=rndrw \
+         --file-block-size=8K \
+         --file-total-size=100G \
+         --file-num=50 \
+         --file-fsync-all \
+         --num-threads=8 \
+          prepare
+
+# run test:
+cd /mnt/postgresql/
+sysbench --test=fileio \
+         --file-test-mode=rndrw \
+         --file-block-size=8K \
+         --file-total-size=100G \
+         --file-num=50 \
+         --file-fsync-all \
+         --num-threads=8 \
+         run 

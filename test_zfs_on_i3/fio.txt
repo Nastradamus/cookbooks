@@ -1,0 +1,78 @@
+# System info:
+
+Ubuntu 16.04.5 LTS
+Linux kernel: 4.4.0-1067-aws
+
+AWS i3.2xlarge instance:
+60GB RAM, 8 CPU, NVME 1.9T
+
+# Tuning:
+echo 3 > /proc/sys/vm/drop_caches
+
+# Set scaling_governor to performance mode
+echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+# Disable swap
+echo 0 > /proc/sys/vm/swappiness
+
+# zfs:
+zpool create -O compression=on -O atime=off -m /mnt/postgresql zpool /dev/nvme0n1
+
+# limit ARC cache to 20GB:
+echo "21474836480" > /sys/module/zfs/parameters/zfs_arc_max
+
+# ext4:
+mkfs.ext4 /dev/nvme0n1
+
+mount -o noatime \
+      -o data=writeback \
+      -o barrier=0 \
+      -o nobh \
+      /dev/nvme0n1 /mnt/postgresql
+
+
+######################### TESTS ###########################
+
+# Prepare file
+fio --name=fill_file \
+  --filename=/mnt/postgresql/fio_sample --filesize=50G \
+  --ioengine=libaio --direct=0 --verify=0 --randrepeat=0 \
+  --bs=128K --iodepth=64 --rw=randwrite
+
+# Test write bandwith and latency
+
+echo 3 > /proc/sys/vm/drop_caches
+fio --name=write_bandwidth_test \
+  --filename=/mnt/postgresql/fio_sample --filesize=50G \
+  --time_based --ramp_time=2s --runtime=30s \
+  --ioengine=libaio --direct=0 --verify=0 --randrepeat=0 \
+  --bs=8K --iodepth=32 --rw=randwrite --fsync=1
+
+# zfs recordsize=128k:
+
+  write: io=119112KB, bw=3970.3KB/s, iops=495, runt= 30001msec
+    slat (usec): min=15, max=77403, avg=1736.83, stdev=1814.41
+    clat (usec): min=3, max=147592, avg=62576.77, stdev=25064.53
+     lat (msec): min=2, max=150, avg=64.39, stdev=25.75
+
+# zfs recordsize=8k:
+
+  write: io=166968KB, bw=5565.5KB/s, iops=694, runt= 30001msec
+    slat (usec): min=14, max=26302, avg=1214.60, stdev=1174.34
+    clat (usec): min=152, max=89919, avg=44586.67, stdev=9955.95
+     lat (msec): min=2, max=91, avg=45.80, stdev=10.09
+
+# ext4:
+
+  write: io=3653.8MB, bw=124711KB/s, iops=15587, runt= 30001msec
+    slat (usec): min=5, max=58, avg= 7.00, stdev= 1.06
+    clat (usec): min=53, max=4609, avg=1989.16, stdev=238.25
+     lat (usec): min=60, max=4616, avg=1996.34, stdev=238.19
+
+
+#################### Write test results: ########################
+
+ZFS recordsize=128k: 112MB with avg latency ~45ms
+ZFS recordsize=8k: 166MB with avg latency ~0,0056ms
+ext4: 3653MB with avg latency ~64ms
+
+
