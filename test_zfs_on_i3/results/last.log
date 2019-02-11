@@ -2725,3 +2725,56 @@ ALTER SYSTEM
 Creating dataset ~120GB...
 + echo 'Creating dataset ~120GB...'
 + pgbench -U postgres -d test -s 8000 -i
+Dataset was created
++ echo 'Dataset was created'
++ psql -Upostgres -d postgres -d test -c 'alter system set fsync TO '\''on'\'''
+ALTER SYSTEM
++ psql -Upostgres -f -
+                                               List of databases
+ Name |  Owner   | Encoding |   Collate   |    Ctype    | Access privileges |  Size  | Tablespace | Description 
+------+----------+----------+-------------+-------------+-------------------+--------+------------+-------------
+ test | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |                   | 117 GB | pg_default | 
+(1 row)
+
+Ready for pgbench!
+################### BENCHMARK ####################
++ echo 'Ready for pgbench!'
++ run_bench
++ echo '################### BENCHMARK ####################'
++ pg_ctlcluster 11 main stop -m f
++ sleep 3
++ pg_ctlcluster 11 main start
++ sleep 3
++ echo 3
+Running benchmark... for 10 minutes
++ mkdir -p /home/ubuntu/artifacts
++ echo 'Running benchmark... for 10 minutes'
++ tee /home/ubuntu/artifacts/pgbench_results.txt
++ pgbench -j8 -c100 -T600 -r -Mprepared -Upostgres test
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 8000
+query mode: prepared
+number of clients: 100
+number of threads: 8
+duration: 600 s
+number of transactions actually processed: 4224982
+latency average = 14.206 ms
+tps = 7039.257201 (including connections establishing)
+tps = 7039.305842 (excluding connections establishing)
+statement latencies in milliseconds:
+         0.003  \set aid random(1, 100000 * :scale)
+         0.002  \set bid random(1, 1 * :scale)
+         0.001  \set tid random(1, 10 * :scale)
+         0.001  \set delta random(-5000, 5000)
+         0.715  BEGIN;
+         3.291  UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+         0.852  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+         0.893  UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+         0.997  UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+         0.821  INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+         6.631  END;
+ALL DONE
+Artifact saved at: '/home/ubuntu/artifacts/pgbench_results.txt'
++ echo 'ALL DONE'
++ echo 'Artifact saved at: '\''/home/ubuntu/artifacts/pgbench_results.txt'\'''

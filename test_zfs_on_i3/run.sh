@@ -15,9 +15,6 @@ if [ -z "$FSTYPE" ] || [ -z "$TARGET_HOST" ]; then
   exit 1
 fi
 
-date > results/${FSTYPE}.log
-echo "####################" > "results/${FSTYPE}.log"
-
 scp provision_and_test.sh ${TARGET_HOST}: 
 
 ssh $TARGET_HOST "sudo ./provision_and_test.sh ${FSTYPE}" 2>&1 | tee -a "results/last.log"

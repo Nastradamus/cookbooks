@@ -6,7 +6,6 @@ set -eu -o pipefail
 
 INPUT_FNAME="$1"
 
-
 OUT=$(grep -e "latency average =" -e "xcluding connections establishing" ${INPUT_FNAME})
 
 # echo "$OUT" | grep -o -E [0-9]+\.[0-9]+
