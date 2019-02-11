@@ -21,10 +21,7 @@ ssh $TARGET_HOST "sudo ./provision_and_test.sh ${FSTYPE}" 2>&1 | tee -a "results
 
 echo "Saving artifacts..."
 mkdir -p ./results >/dev/null 2>&1 || true
-echo  >> "./results/${FSTYPE}_results.txt"
-echo "############### pgbench ###############" >> "./results/${FSTYPE}_results.txt"
-echo  >> "./results/${FSTYPE}_results.txt"
 
-ssh ${TARGET_HOST} "cat /home/ubuntu/artifacts/pgbench_results.txt" >> "./results/${FSTYPE}_results.txt"
+ssh ${TARGET_HOST} "cat /home/ubuntu/artifacts/pgbench_results.txt" > "./results/${FSTYPE}_results_timed.csv"
 
 

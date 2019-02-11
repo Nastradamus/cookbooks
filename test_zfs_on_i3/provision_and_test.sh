@@ -220,6 +220,7 @@ EOF
 }
 
 run_bench() {
+
   echo "################### BENCHMARK ####################"
   pg_ctlcluster ${PG_SERVER_VERSION} main stop -m f
   sleep 3
@@ -228,9 +229,15 @@ run_bench() {
   echo 3 > /proc/sys/vm/drop_caches
   mkdir -p "/home/ubuntu/artifacts" >/dev/null 2>&1 || true
   echo "Running benchmark... for 10 minutes"
-  pgbench -j8 -c100 -T600 -r -Mprepared -Upostgres test 2>&1 | tee /home/ubuntu/artifacts/pgbench_results.txt
+  #pgbench -j8 -c100 -T600 -r -Mprepared -Upostgres test 2>&1 | tee "${results_file}"
+
+  local results_file="/home/ubuntu/artifacts/pgbench_results.txt"
+  echo "time_s | TPS | latency_ms | stddev" > "$results_file"
+  pgbench -j8 -c100 -T600 -P 10 -r -Mprepared -Upostgres test 2>&1 | \
+          grep -F "progress: " | grep -F "stddev" | \
+          awk '{ print  $2, $4, $7, $10}' >> "$results_file"
   echo "ALL DONE"
-  echo "Artifact saved at: '/home/ubuntu/artifacts/pgbench_results.txt'"
+  echo "Artifact saved at: '$results_file'"
 }
 
 main() {
