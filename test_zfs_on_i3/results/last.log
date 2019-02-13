@@ -6908,3 +6908,363 @@ ALL DONE
 Artifact saved at: '/home/ubuntu/artifacts/pgbench_results.txt'
 + echo 'ALL DONE'
 + echo 'Artifact saved at: '\''/home/ubuntu/artifacts/pgbench_results.txt'\'''
++ main
++ reset_state
++ stop_kill_postgres
+++ ps auxww
+++ grep postgres
+++ grep -v grep
+++ ps auxww
+++ grep postgres
+++ grep -v grep
+++ ps auxww
+++ grep postgres
+++ grep -v grep
+OK
+Wiping fs...
++ echo OK
+++ zpool list
+++ grep zpool
+++ mount
+++ grep nvme
++ echo 'Wiping fs...'
++ wipefs -f -a /dev/nvme0n1
+OK
++ echo OK
+Clearing Postgres directory...
++ [[ -e /var/lib/postgresql ]]
++ echo 'Clearing Postgres directory...'
++ rm -rf /var/lib/postgresql
+OK
+Dropping caches...
++ echo OK
++ echo 'Dropping caches...'
++ echo 3
+OK
++ echo OK
++ general_tuning
++ echo performance
++ tee /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor /sys/devices/system/cpu/cpu5/cpufreq/scaling_governor /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor
+performance
++ echo 0
++ [[ zfs == \z\f\s ]]
++ prepare_zfs
++ rm -rf /mnt/postgresql
++ zpool create -O compression=on -O atime=off -O recordsize=8k -m /mnt/postgresql zpool /dev/nvme0n1
++ echo 21474836480
++ setup_repo
++ wait_apt
+++ grep -v grep
+++ grep -e dpkg -e apt-
+++ ps auxww
+++ apt-cache search postgresql-11
+++ grep postgres
++ return 0
++ prepare_postgres
++ ln -s /mnt/postgresql /var/lib/postgresql
+++ id postgres
++ mkdir -p /var/lib/postgresql/11/main
++ chown -R postgres:postgres /var/lib/postgresql/11
++ wait_apt
+++ ps auxww
+++ grep -e dpkg -e apt-
+++ grep -v grep
++ apt-get -y purge postgresql-11
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following package was automatically installed and is no longer required:
+  libllvm6.0
+Use 'sudo apt autoremove' to remove it.
+The following packages will be REMOVED:
+  postgresql-11*
+0 upgraded, 0 newly installed, 1 to remove and 42 not upgraded.
+After this operation, 44.9 MB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 85013 files and directories currently installed.)
+Removing postgresql-11 (11.1-3.pgdg16.04+1) ...
+update-alternatives: using /usr/share/postgresql/9.5/man/man1/postmaster.1.gz to provide /usr/share/man/man1/postmaster.1.gz (postmaster.1.gz) in auto mode
+Purging configuration files for postgresql-11 (11.1-3.pgdg16.04+1) ...
+Dropping cluster main...
+Processing triggers for postgresql-common (199.pgdg16.04+1) ...
+Building PostgreSQL dictionaries from installed myspell/hunspell packages...
+Removing obsolete dictionary files:
+Reading package lists...+ wait_apt
+++ ps auxww
+++ grep -e dpkg -e apt-
+++ grep -v grep
++ apt-get install -y postgresql-11
+
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  postgresql-11
+Preconfiguring packages ...
+0 upgraded, 1 newly installed, 0 to remove and 42 not upgraded.
+Need to get 0 B/13.9 MB of archives.
+After this operation, 44.9 MB of additional disk space will be used.
+Selecting previously unselected package postgresql-11.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 83487 files and directories currently installed.)
+Preparing to unpack .../postgresql-11_11.1-3.pgdg16.04+1_amd64.deb ...
+Unpacking postgresql-11 (11.1-3.pgdg16.04+1) ...
+Processing triggers for postgresql-common (199.pgdg16.04+1) ...
+Building PostgreSQL dictionaries from installed myspell/hunspell packages...
+Removing obsolete dictionary files:
+Setting up postgresql-11 (11.1-3.pgdg16.04+1) ...
+Creating new PostgreSQL cluster 11/main ...
+/usr/lib/postgresql/11/bin/initdb -D /var/lib/postgresql/11/main --auth-local peer --auth-host md5
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.UTF-8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/11/main ... ok
+creating subdirectories ... ok
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting dynamic shared memory implementation ... posix
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+Success. You can now start the database server using:
+
+    /usr/lib/postgresql/11/bin/pg_ctl -D /var/lib/postgresql/11/main -l logfile start
+
+Ver Cluster Port Status Owner    Data directory              Log file
+[31m11  main    5433 down   postgres /var/lib/postgresql/11/main /var/log/postgresql/postgresql-11-main.log[0m
+update-alternatives: using /usr/share/postgresql/11/man/man1/postmaster.1.gz to provide /usr/share/man/man1/postmaster.1.gz (postmaster.1.gz) in auto mode
++ stop_kill_postgres
+++ ps auxww
+++ grep postgres
+++ grep -v grep
+Stopping Postgres
++ echo 'Stopping Postgres'
++ killall postgres
++ sleep 5
+++ ps auxww
+++ grep postgres
+++ grep -v grep
+++ ps auxww
+OK
+++ grep postgres
+++ grep -v grep
++ echo OK
++ echo '
+data_directory = '\''/var/lib/postgresql/11/main'\''
+hba_file = '\''/etc/postgresql/11/main/pg_hba.conf'\''
+ident_file = '\''/etc/postgresql/11/main/pg_ident.conf'\''
+external_pid_file = '\''/var/run/postgresql/11-main.pid'\''
+listen_addresses = '\''*'\''
+logging_collector = off
+log_destination = '\''csvlog'\''
+max_connections = 800
+fsync = on
+ssl = off
+autovacuum = off
+shared_buffers = 11GB
+work_mem = 64MB
+effective_cache_size = 64GB
+wal_level = minimal
+full_page_writes = off
+wal_log_hints = off
+checkpoint_timeout = 120min
+max_wal_size = 40GB
+min_wal_size = 10GB
+checkpoint_completion_target = 1.0
+hot_standby = off
+max_wal_senders = 0
+# vacuum tuning (for speed up dataset creation)
+maintenance_work_mem = 2GB
+vacuum_cost_delay = 1ms
+vacuum_cost_page_hit = 1
+vacuum_cost_page_miss = 10
+vacuum_cost_page_dirty = 1
+vacuum_cost_limit = 1700
+'
++ echo 'local   all all trust'
++ echo 'host all  all    0.0.0.0/0  md5'
++ pg_ctlcluster 11 main start
+Waiting while postgres starts...
++ echo 'Waiting while postgres starts...'
++ sleep 5
+Postgres is running
++ psql -Upostgres -d postgres -c select
++ echo 'Postgres is running'
++ main
++ prepare_postgres
++ ln -s /mnt/postgresql /var/lib/postgresql
+++ id postgres
++ mkdir -p /var/lib/postgresql/11/main
++ chown -R postgres:postgres /var/lib/postgresql/11
++ wait_apt
+++ ps auxww
+++ grep -e dpkg -e apt-
+++ grep -v grep
++ apt-get -y purge postgresql-11
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following package was automatically installed and is no longer required:
+  libllvm6.0
+Use 'sudo apt autoremove' to remove it.
+The following packages will be REMOVED:
+  postgresql-11*
+0 upgraded, 0 newly installed, 1 to remove and 42 not upgraded.
+After this operation, 44.9 MB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 85013 files and directories currently installed.)
+Removing postgresql-11 (11.1-3.pgdg16.04+1) ...
+update-alternatives: using /usr/share/postgresql/9.5/man/man1/postmaster.1.gz to provide /usr/share/man/man1/postmaster.1.gz (postmaster.1.gz) in auto mode
+Purging configuration files for postgresql-11 (11.1-3.pgdg16.04+1) ...
+Dropping cluster main...
+Processing triggers for postgresql-common (199.pgdg16.04+1) ...
+Building PostgreSQL dictionaries from installed myspell/hunspell packages...
+Removing obsolete dictionary files:
+Reading package lists...
++ wait_apt
+++ ps auxww
+++ grep -e dpkg -e apt-
+++ grep -v grep
++ apt-get install -y postgresql-11
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  postgresql-11
+Preconfiguring packages ...
+0 upgraded, 1 newly installed, 0 to remove and 42 not upgraded.
+Need to get 0 B/13.9 MB of archives.
+After this operation, 44.9 MB of additional disk space will be used.
+Selecting previously unselected package postgresql-11.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 83487 files and directories currently installed.)
+Preparing to unpack .../postgresql-11_11.1-3.pgdg16.04+1_amd64.deb ...
+Unpacking postgresql-11 (11.1-3.pgdg16.04+1) ...
+Processing triggers for postgresql-common (199.pgdg16.04+1) ...
+Building PostgreSQL dictionaries from installed myspell/hunspell packages...
+Removing obsolete dictionary files:
+Setting up postgresql-11 (11.1-3.pgdg16.04+1) ...
+Creating new PostgreSQL cluster 11/main ...
+/usr/lib/postgresql/11/bin/initdb -D /var/lib/postgresql/11/main --auth-local peer --auth-host md5
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.UTF-8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/11/main ... ok
+creating subdirectories ... ok
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting dynamic shared memory implementation ... posix
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+Success. You can now start the database server using:
+
+    /usr/lib/postgresql/11/bin/pg_ctl -D /var/lib/postgresql/11/main -l logfile start
+
+Ver Cluster Port Status Owner    Data directory              Log file
+[31m11  main    5433 down   postgres /var/lib/postgresql/11/main /var/log/postgresql/postgresql-11-main.log[0m
+update-alternatives: using /usr/share/postgresql/11/man/man1/postmaster.1.gz to provide /usr/share/man/man1/postmaster.1.gz (postmaster.1.gz) in auto mode
++ stop_kill_postgres
+++ ps auxww
+++ grep postgres
+++ grep -v grep
+Stopping Postgres
++ echo 'Stopping Postgres'
++ killall postgres
++ sleep 5
+++ ps auxww
+++ grep postgres
+++ grep -v grep
+++ ps auxww
+++ grep postgres
+++ grep -v grep
+OK
++ echo OK
++ echo '
+data_directory = '\''/var/lib/postgresql/11/main'\''
+hba_file = '\''/etc/postgresql/11/main/pg_hba.conf'\''
+ident_file = '\''/etc/postgresql/11/main/pg_ident.conf'\''
+external_pid_file = '\''/var/run/postgresql/11-main.pid'\''
+listen_addresses = '\''*'\''
+logging_collector = off
+log_destination = '\''csvlog'\''
+max_connections = 800
+fsync = on
+ssl = off
+autovacuum = off
+shared_buffers = 11GB
+work_mem = 64MB
+effective_cache_size = 64GB
+wal_level = minimal
+full_page_writes = off
+wal_log_hints = off
+checkpoint_timeout = 120min
+max_wal_size = 40GB
+min_wal_size = 10GB
+checkpoint_completion_target = 1.0
+hot_standby = off
+max_wal_senders = 0
+# vacuum tuning (for speed up dataset creation)
+maintenance_work_mem = 2GB
+vacuum_cost_delay = 1ms
+vacuum_cost_page_hit = 1
+vacuum_cost_page_miss = 10
+vacuum_cost_page_dirty = 1
+vacuum_cost_limit = 1700
+'
++ echo 'local   all all trust'
++ echo 'host all  all    0.0.0.0/0  md5'
++ pg_ctlcluster 11 main start
+Waiting while postgres starts...
++ echo 'Waiting while postgres starts...'
++ sleep 5
+Postgres is running
++ psql -Upostgres -d postgres -c select
++ echo 'Postgres is running'
+prepare test database for pgbench
++ main
++ prepare_bench_dataset
++ echo 'prepare test database for pgbench'
++ psql -Upostgres -d postgres -c 'create database test'
+CREATE DATABASE
+ALTER SYSTEM
+Creating dataset ~120GB...
++ psql -Upostgres -d postgres -d test -c 'alter system set fsync TO '\''off'\'''
++ echo 'Creating dataset ~120GB...'
++ pgbench -U postgres -d test -s 8000 -i
+Dataset was created
+ALTER SYSTEM
++ echo 'Dataset was created'
++ psql -Upostgres -d postgres -d test -c 'alter system set fsync TO '\''on'\'''
++ psql -Upostgres -f -
+                                               List of databases
+ Name |  Owner   | Encoding |   Collate   |    Ctype    | Access privileges |  Size  | Tablespace | Description 
+------+----------+----------+-------------+-------------+-------------------+--------+------------+-------------
+ test | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |                   | 117 GB | pg_default | 
+(1 row)
+
+Ready for pgbench!
++ echo 'Ready for pgbench!'
+################### BENCHMARK ####################
++ main
++ run_bench
++ echo '################### BENCHMARK ####################'
++ pg_ctlcluster 11 main stop -m f
++ sleep 3
++ pg_ctlcluster 11 main start
++ sleep 3
++ echo 3
+Prevarming pgbench for 3 minutes...
++ mkdir -p /home/ubuntu/artifacts
++ echo 'Prevarming pgbench for 3 minutes...'
++ pgbench -j8 -c100 -T120 -P 10 -r -Mprepared -Upostgres test

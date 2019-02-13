@@ -228,14 +228,18 @@ run_bench() {
   sleep 3
   echo 3 > /proc/sys/vm/drop_caches
   mkdir -p "/home/ubuntu/artifacts" >/dev/null 2>&1 || true
+
+  echo "Prevarming pgbench for 3 minutes..."
+  pgbench -j8 -c100 -T120 -P 10 -r -Mprepared -Upostgres test >/dev/null 2>&1
+  echo "OK"
+
   echo "Running benchmark... for 10 minutes"
-  #pgbench -j8 -c100 -T600 -r -Mprepared -Upostgres test 2>&1 | tee "${results_file}"
 
   local results_file="/home/ubuntu/artifacts/pgbench_results.txt"
-  echo "time_s | TPS | latency_ms | stddev" > "$results_file"
+  echo "time_s;TPS;latency_ms;stddev" > "$results_file"
   pgbench -j8 -c100 -T600 -P 10 -r -Mprepared -Upostgres test 2>&1 | \
           grep -F "progress: " | grep -F "stddev" | \
-          awk '{ print  $2, $4, $7, $10}' >> "$results_file"
+          awk '{ print  $2, $4, $7, $10}' | tr " " ";" >> "$results_file"
   echo "ALL DONE"
   echo "Artifact saved at: '$results_file'"
 }
