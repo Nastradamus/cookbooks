@@ -111,7 +111,11 @@ prepare_zfs() {
   rm -rf /mnt/postgresql >/dev/null 2>&1 || true
 
   # create slightly tuned zfs pool and filesystem
-  zpool create -O compression=on -O atime=off -O recordsize=8k -m /mnt/postgresql zpool /dev/nvme0n1
+  zpool create -O compression=on \
+               -O atime=off \
+               -O recordsize=8k \
+               -O logbias=throughput \
+               -m /mnt/postgresql zpool /dev/nvme0n1
   
   # limit ARC cache to 20GB:
   echo "21474836480" > /sys/module/zfs/parameters/zfs_arc_max
@@ -236,10 +240,10 @@ run_bench() {
   echo "Running benchmark... for 10 minutes"
 
   local results_file="/home/ubuntu/artifacts/pgbench_results.txt"
-  echo "time_s;TPS;latency_ms;stddev" > "$results_file"
+  echo "time_s,TPS,latency_ms,stddev" > "$results_file"
   pgbench -j8 -c100 -T600 -P 10 -r -Mprepared -Upostgres test 2>&1 | \
           grep -F "progress: " | grep -F "stddev" | \
-          awk '{ print  $2, $4, $7, $10}' | tr " " ";" >> "$results_file"
+          awk '{ print  $2, $4, $7, $10}' | tr " " "," >> "$results_file"
   echo "ALL DONE"
   echo "Artifact saved at: '$results_file'"
 }
