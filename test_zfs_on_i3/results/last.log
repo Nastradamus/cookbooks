@@ -8309,3 +8309,794 @@ ALL DONE
 Artifact saved at: '/home/ubuntu/artifacts/pgbench_results.txt'
 + echo 'ALL DONE'
 + echo 'Artifact saved at: '\''/home/ubuntu/artifacts/pgbench_results.txt'\'''
++ main
++ reset_state
++ stop_kill_postgres
+++ ps auxww
+++ grep postgres
+++ grep -v grep
+Stopping Postgres
++ echo 'Stopping Postgres'
++ killall postgres
++ sleep 5
+++ grep -v grep
+++ grep postgres
+Can't just stop. Killing...
+Killing Postgres
+++ ps auxww
++ echo 'Can'\''t just stop. Killing...'
++ echo 'Killing Postgres'
++ killall -s 9 postgres
++ sleep 5
+++ ps auxww
+++ grep postgres
+++ grep -v grep
+OK
++ echo OK
+++ zpool list
+++ grep zpool
+Destroying zfs pool...
++ echo 'Destroying zfs pool...'
++ zfs unmount -f /mnt/postgresql
++ zpool destroy -f zpool
+OK
++ echo OK
+++ mount
+++ grep nvme
+Wiping fs...
++ echo 'Wiping fs...'
++ wipefs -f -a /dev/nvme0n1
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003fc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003f800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003f400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003f000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003ec00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003e800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003e400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003e000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003dc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003d800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003d400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003d000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003cc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003c800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003c400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003c000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003bc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003b800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003b400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003b000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003ac00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003a800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003a400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0003a000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00039c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00039800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00039400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00039000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00038c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00038800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00038400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00038000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00037c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00037800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00037400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00037000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00036c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00036800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00036400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00036000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00035c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00035800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00035400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00035000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00034c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00034800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00034400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00034000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00033c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00033800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00033400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00033000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00032c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00032800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00032400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00032000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00031c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00031800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00031400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00031000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00030c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00030800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00030400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00030000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002fc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002f800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002f400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002f000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002ec00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002e800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002e400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002e000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002dc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002d800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002d400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002d000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002cc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002c800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002c400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002c000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002bc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002b800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002b400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002b000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002ac00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002a800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002a400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0002a000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00029c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00029800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00029400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00029000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00028c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00028800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00028400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00028000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00027c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00027800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00027400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00027000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00026c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00026800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00026400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00026000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00025c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00025800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00025400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00025000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00024c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00024800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00024400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00024000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00023c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00023800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00023400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00023000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00022c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00022800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00022400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00022000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00021c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00021800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00021400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00021000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00020c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007fc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007f800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007f400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007f000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007ec00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007e800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007e400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007e000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007dc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007d800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007d400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007d000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007cc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007c800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007c400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007c000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007bc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007b800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007b400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007b000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007ac00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007a800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007a400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0007a000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00079c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00079800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00079400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00079000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00078c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00078800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00078400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00078000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00077c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00077800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00077400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00077000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00076c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00076800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00076400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00076000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00075c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00075800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00075400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00075000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00074c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00074800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00074400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00074000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00073c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00073800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00073400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00073000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00072c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00072800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00072400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00072000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00071c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00071800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00071400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00071000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00070c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00070800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00070400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00070000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006fc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006f800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006f400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006f000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006ec00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006e800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006e400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006e000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006dc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006d800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006d400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006d000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006cc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006c800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006c400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006c000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006bc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006b800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006b400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006b000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006ac00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006a800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006a400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x0006a000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00069c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00069800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00069400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00069000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00068c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00068800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00068400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00068000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00067c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00067800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00067400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00067000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00066c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00066800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00066400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00066000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00065c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00065800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00065400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00065000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00064c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00064800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00064400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00064000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00063c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00063800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00063400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00063000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00062c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00062800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00062400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00062000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00061c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00061800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00061400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00061000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00060c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00060800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00060400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x00060000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbfc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbf800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbf400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbf000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbec00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbe800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbe400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbe000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbdc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbd800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbd400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbd000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbcc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbc800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbc400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbc000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbbc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbb800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbb400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbb000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cbac00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cba800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cba400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cba000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb9c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb9800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb9400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb9000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb8c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb8800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb8400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb8000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb7c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb7800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb7400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb7000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb6c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb6800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb6400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb6000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb5c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb5800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb5400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb5000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb4c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb4800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb4400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb4000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb3c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb3800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb3400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb3000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb2c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb2800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb2400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb2000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb1c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb1800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb1400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb1000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb0c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb0800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb0400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cb0000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cafc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60caf800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60caf400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60caf000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60caec00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cae800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cae400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cae000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cadc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cad800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cad400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cad000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cacc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cac800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cac400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cac000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cabc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cab800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cab400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cab000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60caac00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60caa800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60caa400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60caa000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca9c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca9800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca9400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca9000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca8c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca8800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca8400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca8000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca7c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca7800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca7400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca7000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca6c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca6800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca6400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca6000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca5c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca5800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca5400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca5000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca4c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca4800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca4400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca4000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca3c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca3800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca3400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca3000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca2c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca2800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca2400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca2000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca1c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca1800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca1400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca1000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca0c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca0800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca0400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ca0000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cffc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cff800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cff400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cff000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfec00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfe800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfe400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfe000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfdc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfd800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfd400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfd000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfcc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfc800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfc400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfc000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfbc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfb800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfb400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfb000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfac00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfa800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfa400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cfa000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf9c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf9800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf9400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf9000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf8c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf8800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf8400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf8000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf7c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf7800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf7400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf7000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf6c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf6800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf6400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf6000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf5c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf5800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf5400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf5000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf4c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf4800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf4400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf4000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf3c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf3800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf3400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf3000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf2c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf2800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf2400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf2000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf1c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf1800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf1400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf1000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf0c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf0800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf0400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cf0000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cefc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cef800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cef400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cef000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ceec00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cee800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cee400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cee000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cedc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ced800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ced400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ced000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cecc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cec800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cec400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cec000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cebc00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ceb800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ceb400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ceb000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ceac00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cea800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cea400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60cea000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce9c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce9800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce9400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce9000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce8c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce8800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce8400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce8000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce7c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce7800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce7400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce7000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce6c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce6800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce6400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce6000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce5c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce5800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce5400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce5000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce4c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce4800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce4400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce4000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce3c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce3800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce3400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce3000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce2c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce2800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce2400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce2000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce1c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce1800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce1400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce1000 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce0c00 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce0800 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce0400 (zfs_member): 0c b1 ba 00 00 00 00 00
+/dev/nvme0n1: 8 bytes were erased at offset 0x1ba60ce0000 (zfs_member): 0c b1 ba 00 00 00 00 00
+OK
+Clearing Postgres directory...
++ echo OK
++ [[ -e /var/lib/postgresql ]]
++ echo 'Clearing Postgres directory...'
++ rm -rf /var/lib/postgresql
+OK
+Dropping caches...
++ echo OK
++ echo 'Dropping caches...'
++ echo 3
+OK
++ echo OK
++ general_tuning
++ echo performance
++ tee /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor /sys/devices/system/cpu/cpu5/cpufreq/scaling_governor /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor
+performance
++ echo 0
+Making ext4 fs...
++ [[ ext4 == \z\f\s ]]
++ [[ ext4 == \e\x\t\4 ]]
++ prepare_ext4
++ echo 'Making ext4 fs...'
++ mkfs.ext4 /dev/nvme0n1
+mke2fs 1.42.13 (17-May-2015)
+Discarding device blocks:      4096/463867187 59772928/463867187295178240/463867187                   done                            
+Creating filesystem with 463867187 4k blocks and 115974144 inodes
+Filesystem UUID: c465c7be-611b-4f65-93cc-e31a1a7db9ce
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+	4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968, 
+	102400000, 214990848
+
+Allocating group tables:     0/14157           done                            
+Writing inode tables:     0/14157           done                            
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information:     0/14157           done
+
++ echo OK
+OK
++ rm -rf /mnt/postgresql
++ mkdir -p /mnt/postgresql
+Mounting...
++ echo Mounting...
++ mount -o noatime -o data=writeback -o barrier=0 -o nobh /dev/nvme0n1 /mnt/postgresql
+OK
+Setting scheduler to noop...
++ echo OK
++ echo 'Setting scheduler to noop...'
++ echo noop
+OK
++ echo OK
++ setup_repo
++ wait_apt
+++ ps auxww
+++ grep -e dpkg -e apt-
+++ grep -v grep
+++ grep postgres
+++ apt-cache search postgresql-11
++ return 0
++ prepare_postgres
++ ln -s /mnt/postgresql /var/lib/postgresql
+++ id postgres
++ mkdir -p /var/lib/postgresql/11/main
++ chown -R postgres:postgres /var/lib/postgresql/11
++ wait_apt
+++ ps auxww
+++ grep -e dpkg -e apt-
+++ grep -v grep
+Reading package lists...+ apt-get -y purge postgresql-11
+
+Building dependency tree...
+Reading state information...
+The following package was automatically installed and is no longer required:
+  libllvm6.0
+Use 'sudo apt autoremove' to remove it.
+The following packages will be REMOVED:
+  postgresql-11*
+0 upgraded, 0 newly installed, 1 to remove and 42 not upgraded.
+After this operation, 44.9 MB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 85013 files and directories currently installed.)
+Removing postgresql-11 (11.1-3.pgdg16.04+1) ...
+update-alternatives: using /usr/share/postgresql/9.5/man/man1/postmaster.1.gz to provide /usr/share/man/man1/postmaster.1.gz (postmaster.1.gz) in auto mode
+Purging configuration files for postgresql-11 (11.1-3.pgdg16.04+1) ...
+Dropping cluster main...
+Processing triggers for postgresql-common (199.pgdg16.04+1) ...
+Building PostgreSQL dictionaries from installed myspell/hunspell packages...
+Removing obsolete dictionary files:
++ wait_apt
+++ ps auxww
+++ grep -e dpkg -e apt-
+++ grep -v grep
++ apt-get install -y postgresql-11
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  postgresql-11
+Preconfiguring packages ...
+0 upgraded, 1 newly installed, 0 to remove and 42 not upgraded.
+Need to get 0 B/13.9 MB of archives.
+After this operation, 44.9 MB of additional disk space will be used.
+Selecting previously unselected package postgresql-11.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 83487 files and directories currently installed.)
+Preparing to unpack .../postgresql-11_11.1-3.pgdg16.04+1_amd64.deb ...
+Unpacking postgresql-11 (11.1-3.pgdg16.04+1) ...
+Processing triggers for postgresql-common (199.pgdg16.04+1) ...
+Building PostgreSQL dictionaries from installed myspell/hunspell packages...
+Removing obsolete dictionary files:
+Setting up postgresql-11 (11.1-3.pgdg16.04+1) ...
+Creating new PostgreSQL cluster 11/main ...
+/usr/lib/postgresql/11/bin/initdb -D /var/lib/postgresql/11/main --auth-local peer --auth-host md5
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.UTF-8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/11/main ... ok
+creating subdirectories ... ok
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting dynamic shared memory implementation ... posix
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+Success. You can now start the database server using:
+
+    /usr/lib/postgresql/11/bin/pg_ctl -D /var/lib/postgresql/11/main -l logfile start
+
+Ver Cluster Port Status Owner    Data directory              Log file
+[31m11  main    5433 down   postgres /var/lib/postgresql/11/main /var/log/postgresql/postgresql-11-main.log[0m
+update-alternatives: using /usr/share/postgresql/11/man/man1/postmaster.1.gz to provide /usr/share/man/man1/postmaster.1.gz (postmaster.1.gz) in auto mode
++ stop_kill_postgres
+++ ps auxww
+++ grep postgres
+++ grep -v grep
+Stopping Postgres
++ echo 'Stopping Postgres'
++ killall postgres
++ sleep 5
+OK
+++ ps auxww
+++ grep -v grep
+++ grep postgres
+++ ps auxww
+++ grep postgres
+++ grep -v grep
++ echo OK
++ echo '
+data_directory = '\''/var/lib/postgresql/11/main'\''
+hba_file = '\''/etc/postgresql/11/main/pg_hba.conf'\''
+ident_file = '\''/etc/postgresql/11/main/pg_ident.conf'\''
+external_pid_file = '\''/var/run/postgresql/11-main.pid'\''
+listen_addresses = '\''*'\''
+logging_collector = off
+log_destination = '\''csvlog'\''
+max_connections = 800
+fsync = on
+ssl = off
+autovacuum = off
+shared_buffers = 11GB
+work_mem = 64MB
+effective_cache_size = 64GB
+wal_level = minimal
+full_page_writes = off
+wal_log_hints = off
+checkpoint_timeout = 120min
+max_wal_size = 40GB
+min_wal_size = 10GB
+checkpoint_completion_target = 1.0
+hot_standby = off
+max_wal_senders = 0
+# vacuum tuning (for speed up dataset creation)
+maintenance_work_mem = 2GB
+vacuum_cost_delay = 1ms
+vacuum_cost_page_hit = 1
+vacuum_cost_page_miss = 10
+vacuum_cost_page_dirty = 1
+vacuum_cost_limit = 1700
+'
++ echo 'local   all all trust'
++ echo 'host all  all    0.0.0.0/0  md5'
++ pg_ctlcluster 11 main start
+Waiting while postgres starts...
++ echo 'Waiting while postgres starts...'
++ sleep 5
++ psql -Upostgres -d postgres -c select
+Postgres is running
++ echo 'Postgres is running'
++ prepare_bench_dataset
+prepare test database for pgbench
++ echo 'prepare test database for pgbench'
++ psql -Upostgres -d postgres -c 'create database test'
+CREATE DATABASE
++ psql -Upostgres -d postgres -d test -c 'alter system set fsync TO '\''off'\'''
+ALTER SYSTEM
++ echo 'Creating dataset ~120GB...'
+Creating dataset ~120GB...
++ pgbench -U postgres -d test -s 8000 -i
+Dataset was created
++ echo 'Dataset was created'
++ psql -Upostgres -d postgres -d test -c 'alter system set fsync TO '\''on'\'''
+ALTER SYSTEM
++ psql -Upostgres -f -
+                                               List of databases
+ Name |  Owner   | Encoding |   Collate   |    Ctype    | Access privileges |  Size  | Tablespace | Description 
+------+----------+----------+-------------+-------------+-------------------+--------+------------+-------------
+ test | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |                   | 117 GB | pg_default | 
+(1 row)
+
+Ready for pgbench!
++ echo 'Ready for pgbench!'
++ run_bench
+################### BENCHMARK ####################
++ echo '################### BENCHMARK ####################'
++ pg_ctlcluster 11 main stop -m f
++ sleep 3
++ pg_ctlcluster 11 main start
++ sleep 3
++ echo 3
++ mkdir -p /home/ubuntu/artifacts
+Prevarming pgbench for 3 minutes...
++ echo 'Prevarming pgbench for 3 minutes...'
++ pgbench -j8 -c100 -T120 -P 10 -r -Mprepared -Upostgres test
+OK
+Running benchmark... for 10 minutes
++ echo OK
++ echo 'Running benchmark... for 10 minutes'
++ local results_file=/home/ubuntu/artifacts/pgbench_results.txt
++ echo time_s,TPS,latency_ms,stddev
++ pgbench -j8 -c100 -T600 -P 10 -r -Mprepared -Upostgres test
++ grep -F 'progress: '
++ grep -F stddev
++ awk '{ print  $2, $4, $7, $10}'
++ tr ' ' ,
+ALL DONE
+Artifact saved at: '/home/ubuntu/artifacts/pgbench_results.txt'
++ echo 'ALL DONE'
++ echo 'Artifact saved at: '\''/home/ubuntu/artifacts/pgbench_results.txt'\'''
